@@ -39,3 +39,86 @@ This project includes:
 - Budget allocation recommendations
 - Final PDF report
 - GitHub repository with full documentation
+- ## 2. Data Model & Schema
+- 
+
+### 2.1 Dimension Tables
+
+#### dim_user
+- user_id (PK)
+- install_date
+- country
+- device_type
+- attribution_channel
+- attribution_campaign
+
+#### dim_channel
+- channel_id (PK)
+- channel_name
+
+#### dim_campaign
+- campaign_id (PK)
+- channel_id (FK)
+- campaign_name
+- creative_id (FK)
+
+#### dim_creative
+- creative_id (PK)
+- creative_name
+- creative_type (video, image)
+
+#### dim_country
+- country_code (PK)
+- country_name
+
+#### dim_device
+- device_type (PK)
+- os_version
+
+### 2.2 Fact Tables
+
+#### fact_installs
+- install_id (PK)
+- user_id (FK)
+- campaign_id (FK)
+- channel_id (FK)
+- install_time
+- cost
+- impressions
+- clicks
+
+#### fact_marketing_spend
+- spend_id (PK)
+- channel_id (FK)
+- campaign_id (FK)
+- date
+- cost
+
+#### fact_events
+- event_id (PK)
+- user_id (FK)
+- event_type
+- event_time
+- event_value
+
+#### fact_revenue
+- revenue_id (PK)
+- user_id (FK)
+- revenue_time
+- revenue_amount
+- revenue_type (IAP, Ad)
+
+#### fact_retention
+- retention_id (PK)
+- user_id (FK)
+- day_number (1, 7)
+- retained (0/1)
+
+#### fact_ab_tests
+- test_id (PK)
+- user_id (FK)
+- variant (A/B)
+- metric_value
+- event_date
+
+

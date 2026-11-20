@@ -1,0 +1,40 @@
+# R and RStudio local state
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+
+# Generated synthetic datasets
+data/raw/
+data/processed/
+data/truth/
+
+# Temporary analytical exports
+data/external.csv
+data/Integretated creative diagnostics.csv
+
+# Tableau temporary/cache files
+*.hyper
+*.tfl
+*.tflx
+~*.twbr
+
+# Environment files and credentials
+.env
+.env.*
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Local development / superseded publication copies
+Generating_PuzzlePop_raw_data.R
+clean_PuzzlePop_raw_data.R
+clean_ad_delivery_truth.R
+create_PuzzlePop_raw_data.R
+
+# Local README safety backup
+README_backup_before_markdown_fix.md
+
+# Local SQL development archive
+scripts/SQL/archive/
